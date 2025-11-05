@@ -3,7 +3,9 @@ import math
 def factorial(n: int) -> int:
     """
     Calculate the factorial of a non-negative integer.
-
+    Example:
+        -> factorial(5)
+        = 120
     Args:
         n (int): The non-negative integer to calculate factorial for.
 

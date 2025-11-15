@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_6/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -63,9 +64,21 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                       ),
 
-                      child: Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: Icon(Icons.search, color: Colors.grey),
+                      child: SizedBox(
+                        height: 38,
+                        width: 38,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const SearchPage(),
+                              ),
+                            );
+                          },
+                          icon: Icon(Icons.search),
+                          color: Colors.grey,
+                          style: ButtonStyle(),
+                        ),
                       ),
                     ),
                   ],

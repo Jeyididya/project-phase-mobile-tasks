@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_6/pages/home_page.dart';
+import 'package:task_6/pages/search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: SearchPage(),
       home: HomePage(),
     );
   }

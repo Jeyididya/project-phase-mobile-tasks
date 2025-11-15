@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_6/pages/add_product.dart';
 import 'package:task_6/pages/home_page.dart';
+import 'package:task_6/pages/product_detail.dart';
 import 'package:task_6/pages/search_page.dart';
 
 void main() {
@@ -34,7 +36,14 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: SearchPage(),
-      home: HomePage(),
+      // home: HomePage(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const HomePage(),
+        "/add": (context) => const AddProduct(),
+        "/detail": (context) => const ProductDetail(),
+        "/search": (context) => const SearchPage(),
+      },
     );
   }
 }

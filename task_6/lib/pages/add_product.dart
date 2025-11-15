@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 
-class AddProduct extends StatelessWidget {
+class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
+
+  @override
+  State<AddProduct> createState() => _AddProductState();
+}
+
+class _AddProductState extends State<AddProduct> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _categoryController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +54,7 @@ class AddProduct extends StatelessWidget {
               SizedBox(
                 height: 46,
                 child: TextField(
+                  controller: _nameController,
                   decoration: InputDecoration(
                     fillColor: Colors.grey[70],
                     filled: true,
@@ -53,6 +70,7 @@ class AddProduct extends StatelessWidget {
               SizedBox(
                 height: 46,
                 child: TextField(
+                  controller: _categoryController,
                   decoration: InputDecoration(
                     fillColor: Colors.grey[70],
                     filled: true,
@@ -67,6 +85,7 @@ class AddProduct extends StatelessWidget {
               SizedBox(
                 height: 46,
                 child: TextField(
+                  controller: _priceController,
                   decoration: InputDecoration(
                     // suffix: Icon(Icons.money),
                     suffixText: "\$",
@@ -84,6 +103,7 @@ class AddProduct extends StatelessWidget {
               SizedBox(
                 height: 170,
                 child: TextField(
+                  controller: _descriptionController,
                   minLines: 6,
                   maxLines: 12,
                   decoration: InputDecoration(
@@ -98,7 +118,20 @@ class AddProduct extends StatelessWidget {
               SizedBox(
                 width: 500,
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print(_nameController.text);
+                    Navigator.pushNamed(
+                      context,
+                      "/",
+                      arguments: {
+                        'name': _nameController.text,
+                        'price': _priceController.text,
+                        'category': _categoryController.text,
+                        'description': _descriptionController.text,
+                      },
+                    );
+                    _nameController.clear();
+                  },
 
                   style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(

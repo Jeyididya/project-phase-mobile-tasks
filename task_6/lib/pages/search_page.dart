@@ -6,8 +6,8 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Search Product")),
-        actions: [],
+        title: Text("Search Product"),
+        centerTitle: true,
 
         leading: IconButton(
           onPressed: () {

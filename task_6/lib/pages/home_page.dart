@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_6/pages/add_product.dart';
+import 'package:task_6/pages/product_detail.dart';
 import 'package:task_6/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -107,56 +108,66 @@ class HomePage extends StatelessWidget {
 }
 
 Widget _buildCardWidget(BuildContext context) {
-  return Card(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-    elevation: 5,
-    margin: EdgeInsets.symmetric(vertical: 8),
-    child: Column(
-      children: [
-        ClipRRect(
-          // borderRadius: BorderRadius.zero,
-          child: Image.asset(
-            'assets/men_shoe.png',
-            // width: 100,
-            // height: 120,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-        SizedBox(width: 10),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Derby Leather Shoes', style: TextStyle(fontSize: 21)),
-                    Text('\$120', style: TextStyle(fontSize: 14)),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Men\'s shoe',
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.orange),
-                        Text("(4.0)"),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+  return GestureDetector(
+    onTap: () {
+      Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (context) => const ProductDetail()));
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 5,
+      margin: EdgeInsets.symmetric(vertical: 8),
+      child: Column(
+        children: [
+          ClipRRect(
+            // borderRadius: BorderRadius.zero,
+            child: Image.asset(
+              'assets/men_shoe.png',
+              // width: 100,
+              // height: 120,
+              fit: BoxFit.fitWidth,
             ),
           ),
-        ),
-      ],
+          SizedBox(width: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Derby Leather Shoes',
+                        style: TextStyle(fontSize: 21),
+                      ),
+                      Text('\$120', style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Men\'s shoe',
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.orange),
+                          Text("(4.0)"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     ),
   );
 }

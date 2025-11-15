@@ -44,8 +44,8 @@ Task 7 implements app routing using named routes and demonstrates passing data f
 Note: the recording is vertical (portrait) and provided as an MKV file. Some browsers may not play MKV inline — use the download link or a compatible player if playback fails.
 
 <video controls width="360" height="640" style="max-width:100%; aspect-ratio:9/16;">
-    <source src="wiki/task_7/task_7.mkv" type="video/x-matroska">
-    Your browser may not support MKV playback. Download the video: <a href="wiki/task_7/task_7.mkv">wiki/task_7/task_7.mkv</a>
+    <source src="wiki/task_7/task_7.mp4" type="video/mp4">
+    https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4
 </video>
 
 

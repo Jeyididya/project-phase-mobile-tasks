@@ -41,12 +41,12 @@ Task 7 implements app routing using named routes and demonstrates passing data f
 - Using named routes to pass data from the add page to the home page.
 
 ### Video
-Note: the recording is vertical (portrait) and provided as an MKV file. Some browsers may not play MKV inline — use the download link or a compatible player if playback fails.
-
 <video controls width="360" height="640" style="max-width:100%; aspect-ratio:9/16;">
     <source src="wiki/task_7/task_7.mp4" type="video/mp4">
-    https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4
+    Your browser does not support the video tag. Download/open the video directly:
+    <a href="https://github.com/Jeyididya/project-phase-mobile-tasks/raw/main/task_6/wiki/task_7/task_7.mp4">task_7.mp4</a>
 </video>
 
+Use this [link](https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4) if playback fails.
 
 If screenshots/videos are not visible, ensure the `wiki/` folder exists at the repository root and contains the referenced files.

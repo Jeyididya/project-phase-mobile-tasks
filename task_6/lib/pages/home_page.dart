@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_6/pages/add_product.dart';
 import 'package:task_6/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -93,7 +94,11 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (context) => const AddProduct()));
+        },
         child: const Icon(Icons.add),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
       ),

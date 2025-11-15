@@ -4,10 +4,23 @@ import 'package:task_6/pages/product_detail.dart';
 import 'package:task_6/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({
+    super.key,
+    this.name,
+    this.category,
+    this.price,
+    this.desciption,
+  });
+
+  final String? name;
+  final String? category;
+  final String? price;
+  final String? desciption;
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments;
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -71,11 +84,7 @@ class HomePage extends StatelessWidget {
                         width: 38,
                         child: IconButton(
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const SearchPage(),
-                              ),
-                            );
+                            Navigator.pushNamed(context, '/search');
                           },
                           icon: Icon(Icons.search),
                           color: Colors.grey,
@@ -86,6 +95,9 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
+                args == null
+                    ? _buildCardWidget(context)
+                    : _buildCardWidget(context, args as Map<String, String>?),
                 _buildCardWidget(context),
                 _buildCardWidget(context),
                 _buildCardWidget(context),
@@ -96,9 +108,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(
-            context,
-          ).push(MaterialPageRoute(builder: (context) => const AddProduct()));
+          Navigator.pushNamed(context, '/add');
         },
         child: const Icon(Icons.add),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
@@ -107,12 +117,10 @@ class HomePage extends StatelessWidget {
   }
 }
 
-Widget _buildCardWidget(BuildContext context) {
+Widget _buildCardWidget(BuildContext context, [Map<String, String>? args]) {
   return GestureDetector(
     onTap: () {
-      Navigator.of(
-        context,
-      ).push(MaterialPageRoute(builder: (context) => const ProductDetail()));
+      Navigator.pushNamed(context, '/detail', arguments: args);
     },
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -121,15 +129,9 @@ Widget _buildCardWidget(BuildContext context) {
       child: Column(
         children: [
           ClipRRect(
-            // borderRadius: BorderRadius.zero,
-            child: Image.asset(
-              'assets/men_shoe.png',
-              // width: 100,
-              // height: 120,
-              fit: BoxFit.fitWidth,
-            ),
+            child: Image.asset('assets/men_shoe.png', fit: BoxFit.fitWidth),
           ),
-          SizedBox(width: 10),
+          SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Padding(
@@ -141,17 +143,20 @@ Widget _buildCardWidget(BuildContext context) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Derby Leather Shoes',
+                        args?['name'] ?? 'Derby Leather Shoes',
                         style: TextStyle(fontSize: 21),
                       ),
-                      Text('\$120', style: TextStyle(fontSize: 14)),
+                      Text(
+                        '\$${args?['price'] ?? '120'},',
+                        style: TextStyle(fontSize: 14),
+                      ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Men\'s shoe',
+                        args?['category'] ?? 'Men\'s shoe',
                         style: TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Row(

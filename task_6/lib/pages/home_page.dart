@@ -96,8 +96,14 @@ class HomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 args == null
-                    ? _buildCardWidget(context)
+                    ? _buildCardWidget(context, {
+                        'name': name ?? '',
+                        'category': category ?? '',
+                        'price': price ?? '',
+                        'description': desciption ?? '',
+                      })
                     : _buildCardWidget(context, args as Map<String, String>?),
+
                 _buildCardWidget(context),
                 _buildCardWidget(context),
                 _buildCardWidget(context),
@@ -147,7 +153,7 @@ Widget _buildCardWidget(BuildContext context, [Map<String, String>? args]) {
                         style: TextStyle(fontSize: 21),
                       ),
                       Text(
-                        '\$${args?['price'] ?? '120'},',
+                        '\$${args?['price'] ?? '120'}',
                         style: TextStyle(fontSize: 14),
                       ),
                     ],

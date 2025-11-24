@@ -19,7 +19,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments;
+    // final args = ModalRoute.of(context)!.settings.arguments;
+    final args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
+
+    Map<String, String>? cardArgs;
+
+    if (args != null && args.isNotEmpty) {
+      cardArgs = args;
+    } else if (name != null ||
+        category != null ||
+        price != null ||
+        desciption != null) {
+      cardArgs = {
+        'name': name ?? '',
+        'category': category ?? '',
+        'price': price ?? '',
+        'description': desciption ?? '',
+      };
+    }
 
     // TODO: implement build
     return Scaffold(
@@ -95,14 +113,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                args == null
-                    ? _buildCardWidget(context, {
-                        'name': name ?? '',
-                        'category': category ?? '',
-                        'price': price ?? '',
-                        'description': desciption ?? '',
-                      })
-                    : _buildCardWidget(context, args as Map<String, String>?),
+                if (cardArgs != null) _buildCardWidget(context, cardArgs),
 
                 _buildCardWidget(context),
                 _buildCardWidget(context),

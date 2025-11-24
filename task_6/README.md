@@ -51,3 +51,11 @@ Task 7 implements app routing using named routes and demonstrates passing data f
 Use this [link](https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4) if playback fails.
 
 If screenshots/videos are not visible, ensure the `wiki/` folder exists at the repository root and contains the referenced files.
+
+## Submission — Task 8
+
+- Prepared tests for:
+    - Test Product Listing — [test/product_list_test.dart](test/product_list_test.dart) 
+    - Test Product Creation [test/product_creation_test.dart](test/product_creation_test.dart) 
+    - Test Product Detail Page Navigation [test/detail_page_navigation_test.dart](test/detail_page_navigation_test.dart) 
+

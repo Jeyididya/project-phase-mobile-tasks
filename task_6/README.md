@@ -46,8 +46,11 @@ Task 7 implements app routing using named routes and demonstrates passing data f
     <source src="wiki/task_7/task_7.mp4" type="video/mp4">
     Your browser does not support the video tag. Download/open the video directly:
     <a href="https://github.com/Jeyididya/project-phase-mobile-tasks/raw/main/task_6/wiki/task_7/task_7.mp4">task_7.mp4</a>
+    Your browser does not support the video tag. Download/open the video directly:
+    <a href="https://github.com/Jeyididya/project-phase-mobile-tasks/raw/main/task_6/wiki/task_7/task_7.mp4">task_7.mp4</a>
 </video>
 
+Use this [link](https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4) if playback fails.
 Use this [link](https://github.com/Jeyididya/project-phase-mobile-tasks/blob/main/task_6/wiki/task_7/task_7.mp4) if playback fails.
 
 If screenshots/videos are not visible, ensure the `wiki/` folder exists at the repository root and contains the referenced files.

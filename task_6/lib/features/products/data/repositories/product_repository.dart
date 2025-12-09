@@ -2,7 +2,7 @@ import '../../domain/entities/product.dart';
 import '../../domain/repositories/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
-  final Map<String, Product> _storage = {}; // in-memory store
+  final Map<String, Product> _storage = {};
 
   @override
   Future<void> insertProduct(Product product) async {

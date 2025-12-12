@@ -62,3 +62,37 @@ If screenshots/videos are not visible, ensure the `wiki/` folder exists at the r
     - Test Product Creation [test/product_creation_test.dart](test/product_creation_test.dart) 
     - Test Product Detail Page Navigation [test/detail_page_navigation_test.dart](test/detail_page_navigation_test.dart) 
 
+
+
+## Submission - Task 10
+
+# Clean Architecture — Data Overview Layer
+
+### Project Structure
+This project uses Clean Architecture:
+
+lib/
+|-- core/ # Shared utilities
+|-- features/
+| --- products/
+| --- domain/ # Entities & usecases
+| --- data/ # Models & repositories
+| --- presentation/ # UI (screens)
+|---main.dart 
+
+###  Data Flow
+
+#### Domain → Pure business rules  
+- Product Entity  
+- Repository interface  
+- Usecases  
+
+#### Data  Implementation  
+- ProductModel (JSON)
+- Repository implementation
+
+#### Presentation  UI  
+- Widgets, screens, state management
+
+
+

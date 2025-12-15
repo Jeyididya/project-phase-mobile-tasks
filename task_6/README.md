@@ -95,4 +95,26 @@ lib/
 - Widgets, screens, state management
 
 
+# Task 11 - Contracts of Data Sources
 
+## Data Flow
+
+### Domain Layer → Pure Business Rules
+- Product Entity: Immutable business object
+- Repository Interface: Abstract contract defining data operations
+- Use Cases: Single-purpose business logic classes
+
+### Data Layer → Implementation Details
+- ProductModel: Extends Product entity, adds JSON serialization
+- Data Source Contracts: Abstract interfaces for remote/local operations
+- Repository Implementation: Uses contracts, switches based on connectivity
+- NetworkInfo: Abstracts network status checking
+
+### Presentation Layer → UI
+
+- Dependency Injection: Services provided via GetIt
+
+## Key Contracts Added
+1. ProductRemoteDataSource: Defines remote API operations
+2. ProductLocalDataSource: Defines local storage operations
+3. NetworkInfo: Abstracts connectivity status

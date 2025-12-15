@@ -3,8 +3,10 @@ import 'package:task_6/pages/add_product.dart';
 import 'package:task_6/pages/home_page.dart';
 import 'package:task_6/pages/product_detail.dart';
 import 'package:task_6/pages/search_page.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  await di.init();
   runApp(const MyApp());
 }
 

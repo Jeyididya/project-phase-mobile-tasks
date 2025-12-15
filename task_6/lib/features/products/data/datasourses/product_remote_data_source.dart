@@ -1,6 +1,6 @@
-import '../entities/product.dart';
+import '../../domain/entities/product.dart';
 
-abstract class ProductRepository {
+abstract class ProductRemoteDataSource {
   Future<void> insertProduct(Product product);
   Future<void> updateProduct(Product product);
   Future<void> deleteProduct(String id);

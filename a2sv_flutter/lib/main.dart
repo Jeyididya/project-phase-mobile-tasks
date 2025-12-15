@@ -4,19 +4,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyAppBar extends StatelessWidget{
+class MyAppBar extends StatelessWidget {
   const MyAppBar({required this.title, super.key});
-
 
   final Widget title;
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      height:56,
-  child: Text("wazzza"),
-    );
+    return Container(height: 56, child: Text("wazzza"));
   }
 }
 
@@ -25,10 +21,7 @@ class MyScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    return Material(child: Column(children: [
-      MyApp()
-    ],),)
+    return Material(child: Column(children: [MyApp()]));
   }
 }
 

@@ -118,3 +118,17 @@ lib/
 1. ProductRemoteDataSource: Defines remote API operations
 2. ProductLocalDataSource: Defines local storage operations
 3. NetworkInfo: Abstracts connectivity status
+
+
+## Submission — Task 12
+
+This section documents Task 12: Implement Repository.
+
+### What I implemented
+   - Checks network status with NetworkInfo.
+    - Uses ProductRemoteDataSource when online.
+    - Uses ProductLocalDataSource when offline.
+    - Caches remote results locally after successful remote fetches.
+
+### Tests added
+- `test/features/products/data/repositories/product_repository_impl_test.dart`

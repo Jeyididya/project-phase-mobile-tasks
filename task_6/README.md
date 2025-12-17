@@ -138,3 +138,14 @@ This section documents Task 13: Implement NetworkInfo.
 - Implemented NetworkInfo and NetworkInfoImpl in lib/core/network/network_info.dart.
     - NetworkInfoImpl is backed by InternetConnectionChecker and exposes the isConnected getter.
     - The concrete implementation accepts an InternetConnectionChecker instance via constructor injection.
+
+## Submission — Task 14
+
+This section documents Task 14: Implement Local Data Source.
+
+### What I implemented
+- Implemented ProductLocalDataSourceImpl in lib/features/products/data/datasourses/product_local_data_source_impl.dart.
+  - Persists products to =SharedPreferences as a JSON list under the key products.
+  - Loads cached products from SharedPreferences when needed.
+  - Implements insert, update, delete, read (single and all) and cache operations.
+  - Keeps an in-memory map for fast access and writes back to prefs on changes.

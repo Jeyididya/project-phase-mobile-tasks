@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:task_6/features/products/data/datasourses/product_local_data_source.dart';
 import 'package:task_6/features/products/data/datasourses/product_local_data_source_impl.dart';
 import 'package:task_6/features/products/data/datasourses/product_remote_data_source.dart';
@@ -14,14 +15,16 @@ import 'features/products/domain/usecases/update_product.dart';
 import 'core/network/network_info.dart';
 
 final getIt = GetIt.instance;
-
 Future<void> init() async {
-  // Core
-  getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
-
   // External
   final sharedPreferences = await SharedPreferences.getInstance();
   getIt.registerLazySingleton(() => sharedPreferences);
+  getIt.registerLazySingleton(() => InternetConnectionChecker());
+
+  // Core
+  getIt.registerLazySingleton<NetworkInfo>(
+    () => NetworkInfoImpl(connectionChecker: getIt()),
+  );
 
   // Data sources
   getIt.registerLazySingleton<ProductRemoteDataSource>(

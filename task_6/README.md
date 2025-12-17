@@ -130,5 +130,11 @@ This section documents Task 12: Implement Repository.
     - Uses ProductLocalDataSource when offline.
     - Caches remote results locally after successful remote fetches.
 
-### Tests added
-- `test/features/products/data/repositories/product_repository_impl_test.dart`
+## Submission — Task 13
+
+This section documents Task 13: Implement NetworkInfo.
+
+### What I implemented
+- Implemented NetworkInfo and NetworkInfoImpl in lib/core/network/network_info.dart.
+    - NetworkInfoImpl is backed by InternetConnectionChecker and exposes the isConnected getter.
+    - The concrete implementation accepts an InternetConnectionChecker instance via constructor injection.

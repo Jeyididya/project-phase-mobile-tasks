@@ -149,3 +149,23 @@ This section documents Task 14: Implement Local Data Source.
   - Loads cached products from SharedPreferences when needed.
   - Implements insert, update, delete, read (single and all) and cache operations.
   - Keeps an in-memory map for fast access and writes back to prefs on changes.
+
+
+
+
+## Submission — Task 17
+
+This section documents Task 17: Implement Bloc for Product Management.
+
+### What I implemented
+- Created event classes in lib/features/products/presentation/bloc/product_event.dart:
+    - LoadAllProductsEvent, GetSingleProductEvent, UpdateProductEvent, DeleteProductEvent, CreateProductEvent.
+- Created state classes in lib/features/products/presentation/bloc/product_state.dart:
+    - InitialState, LoadingState, LoadedAllProductsState, LoadedSingleProductState, ErrorState.
+- Implemented ProductBloc in lib/features/products/presentation/bloc/product_bloc.dart:
+    - Handles all events, emits correct states, interacts with use cases, and handles errors.
+    - Uses the bloc package for stream-based state management.
+
+### Tests added
+- test/features/products/presentation/bloc/product_bloc_test.dart:
+

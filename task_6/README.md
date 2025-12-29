@@ -1,4 +1,3 @@
-
 ## Submission — Task 6
 
 This README documents the submission for Task 6. The screenshots below illustrate the app UI and key features implemented for this task.
@@ -168,4 +167,15 @@ This section documents Task 17: Implement Bloc for Product Management.
 
 ### Tests added
 - test/features/products/presentation/bloc/product_bloc_test.dart:
+
+
+## Submission — Task 18
+
+This section documents Task 18: Dependency Injection Setup.
+
+### What I implemented
+- Set up dependency injection using the get_it package in lib/injection_container.dart.
+- Registered all core services, data sources, repositories, and use cases as lazy singletons.
+- Registered ProductBloc as a factory, injecting all required use cases.
+- Ensured all dependencies are resolved and available throughout the app.
 

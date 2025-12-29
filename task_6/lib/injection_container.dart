@@ -12,6 +12,9 @@ import 'features/products/domain/usecases/delete_product.dart';
 import 'features/products/domain/usecases/get_product.dart';
 import 'features/products/domain/usecases/insert_product.dart';
 import 'features/products/domain/usecases/update_product.dart';
+
+import 'features/products/presentation/bloc/product_bloc.dart';
+import 'features/products/domain/usecases/get_all_products.dart';
 import 'core/network/network_info.dart';
 
 final getIt = GetIt.instance;
@@ -48,4 +51,14 @@ Future<void> init() async {
   getIt.registerLazySingleton(() => DeleteProduct(getIt()));
   getIt.registerLazySingleton(() => GetProduct(getIt()));
   getIt.registerLazySingleton(() => UpdateProduct(getIt()));
+  // Bloc
+  getIt.registerFactory(
+    () => ProductBloc(
+      getAllProducts: getIt<GetAllProducts>(),
+      getProduct: getIt<GetProduct>(),
+      updateProduct: getIt<UpdateProduct>(),
+      deleteProduct: getIt<DeleteProduct>(),
+      insertProduct: getIt<InsertProduct>(),
+    ),
+  );
 }
